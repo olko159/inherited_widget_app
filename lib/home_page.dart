@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import './connectivity_provider.dart';
+import 'package:inherited_widget_app/second_page.dart';
+import 'connectivity.dart';
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({Key? key, required this.title}) : super(key: key);
@@ -11,12 +12,10 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
+  void _openSecondPage(BuildContext context) {
+    Navigator.of(context).push(
+      MaterialPageRoute(builder: (context) => const SecondPage()),
+    );
   }
 
   @override
@@ -32,17 +31,12 @@ class _MyHomePageState extends State<MyHomePage> {
             Text(
               ConnectivityWidget.of(context).result.toString(),
             ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headline4,
-            ),
           ],
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
+        onPressed: () => _openSecondPage(context),
+        child: const Icon(Icons.open_in_new),
       ),
     );
   }

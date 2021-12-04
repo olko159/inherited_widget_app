@@ -1,6 +1,6 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
-import './connectivity_provider.dart';
+import 'connectivity.dart';
 import './home_page.dart';
 import 'package:connectivity_plus/connectivity_plus.dart';
 
@@ -17,7 +17,7 @@ class MyApp extends StatefulWidget {
 
 class _MyAppState extends State<MyApp> {
   late StreamSubscription<ConnectivityResult> subscription;
-  ConnectivityResult connectivityResult = ConnectivityResult.none;
+  var connectivityResult = ConnectivityResult.none;
 
   @override
   initState() {
@@ -46,7 +46,7 @@ class _MyAppState extends State<MyApp> {
         theme: ThemeData(
           primarySwatch: Colors.blue,
         ),
-        home: const MyHomePage(title: 'Flutter Demo Home Page'),
+        home: const MyHomePage(title: 'First page'),
       ),
     );
   }
