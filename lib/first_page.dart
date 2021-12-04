@@ -2,14 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:inherited_widget_app/second_page.dart';
 import 'connectivity.dart';
 
-class FirstPage extends StatefulWidget {
+class FirstPage extends StatelessWidget {
   const FirstPage({Key? key}) : super(key: key);
 
-  @override
-  State<FirstPage> createState() => _FirstPageState();
-}
-
-class _FirstPageState extends State<FirstPage> {
   void _openSecondPage(BuildContext context) {
     Navigator.of(context).push(
       MaterialPageRoute(builder: (context) => const SecondPage()),
