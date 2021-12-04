@@ -11,11 +11,12 @@ class ConnectivityWidget extends InheritedWidget {
   final ConnectivityResult result;
 
   static ConnectivityWidget of(BuildContext context) {
-    final ConnectivityWidget? result =
+    final ConnectivityWidget? widget =
         context.dependOnInheritedWidgetOfExactType<ConnectivityWidget>();
-    return result!;
+    return widget!;
   }
 
   @override
-  bool updateShouldNotify(ConnectivityWidget old) => result != old.result;
+  bool updateShouldNotify(ConnectivityWidget oldWidget) =>
+      result != oldWidget.result;
 }

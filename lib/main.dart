@@ -1,7 +1,7 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'connectivity.dart';
-import './home_page.dart';
+import 'first_page.dart';
 import 'package:connectivity_plus/connectivity_plus.dart';
 
 void main() {
@@ -46,7 +46,7 @@ class _MyAppState extends State<MyApp> {
         theme: ThemeData(
           primarySwatch: Colors.blue,
         ),
-        home: const MyHomePage(title: 'First page'),
+        home: const FirstPage(),
       ),
     );
   }

@@ -2,16 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:inherited_widget_app/second_page.dart';
 import 'connectivity.dart';
 
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({Key? key, required this.title}) : super(key: key);
-
-  final String title;
+class FirstPage extends StatefulWidget {
+  const FirstPage({Key? key}) : super(key: key);
 
   @override
-  State<MyHomePage> createState() => _MyHomePageState();
+  State<FirstPage> createState() => _FirstPageState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
+class _FirstPageState extends State<FirstPage> {
   void _openSecondPage(BuildContext context) {
     Navigator.of(context).push(
       MaterialPageRoute(builder: (context) => const SecondPage()),
@@ -22,7 +20,7 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(widget.title),
+        title: const Text('First Page'),
       ),
       body: Center(
         child: Column(
